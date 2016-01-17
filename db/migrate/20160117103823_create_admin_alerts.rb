@@ -4,7 +4,7 @@ class CreateAdminAlerts < ActiveRecord::Migration
       t.text :description
       t.integer :category
       t.string :email
-      t.decimal :price, precision: 8, scale: 2
+      t.float :price
       t.datetime :deadline
       t.integer :status
 
