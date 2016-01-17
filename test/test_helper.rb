@@ -7,4 +7,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_alert(category = nil, email = 'test@example.com')
+    category ||= Admin::Alert.categories[:breakdown]
+
+    Admin::Alert.create!(description: 'test ' * 25,
+                         category: category,
+                         email: email)
+  end
 end

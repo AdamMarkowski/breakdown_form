@@ -9,7 +9,7 @@ class Admin::Alert < ActiveRecord::Base
   enum status: [:unread, :read]
 
   before_save :set_price_and_deadline
-
+  before_create :set_status
   def set_price_and_deadline
     case category
     when 'breakdown'
@@ -22,5 +22,9 @@ class Admin::Alert < ActiveRecord::Base
       self.deadline = Time.now + 3.days
       self.price = 1
     end
+  end
+
+  def set_status
+    self.status = Admin::Alert.statuses[:unread]
   end
 end
