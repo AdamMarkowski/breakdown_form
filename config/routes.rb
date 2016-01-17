@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :alerts
-  end
+  # namespace :admin do
+  #   resources :alerts
+  # end
 
   post 'create_alert' => 'alert_form#create', as: :create_alert
   # The priority is based upon order of creation: first created -> highest priority.

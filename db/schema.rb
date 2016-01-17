@@ -24,15 +24,4 @@ ActiveRecord::Schema.define(version: 20160117103823) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "alerts", force: :cascade do |t|
-    t.text     "description"
-    t.integer  "category"
-    t.string   "email"
-    t.decimal  "price"
-    t.datetime "deadline"
-    t.integer  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
 end
