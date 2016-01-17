@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :alerts
+  end
+
+  post 'create_alert' => 'alert_form#create', as: :create_alert
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'alert_form#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

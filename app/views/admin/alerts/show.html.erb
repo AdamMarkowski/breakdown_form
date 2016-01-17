@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_alert.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_alert.category %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_alert.email %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @admin_alert.price %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @admin_alert.deadline %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin_alert.status %>
+</p>
+
+<%= link_to 'Edit', edit_admin_alert_path(@admin_alert) %> |
+<%= link_to 'Back', admin_alerts_path %>

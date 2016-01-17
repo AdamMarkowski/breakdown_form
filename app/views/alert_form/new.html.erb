@@ -1,0 +1,15 @@
+<%= simple_form_for(@alert, url: create_alert_path, html: { class: '' }) do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <%= f.input :description, as: :text, :input_html => {:minlength => 100 , maxlength: 1000 } %>
+  </div>
+  <div class="field">
+    <%= f.input :category, as: :select, collection: Admin::Alert.categories.keys.to_a, selected: 1 %>
+  </div>
+  <div class="field">
+    <%= f.input :email, as: :email, :placeholder => "Enter your E-mail" %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, 'Send' %>
+  </div>
+<% end %>
